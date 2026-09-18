@@ -24,15 +24,14 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.13'
+          gradle-version: '8.7'
 
       - name: Build Debug APK
-        working-directory: DailyTasksApp
         run: gradle assembleDebug --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: DailyTasksApp-debug-apk
-          path: DailyTasksApp/app/build/outputs/apk/debug/*.apk
+          name: Medicent-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
